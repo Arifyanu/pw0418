@@ -5,22 +5,44 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fa/web-fa/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.htm"
+    })
+    .when("/", {
+        templateUrl : "about.htm"
+    });
+
+    
+</script>
   </head>
   <body>
-  	<div class="containeer">
+  	<div  ng-app="myApp" class="containeer">
   	 	<div class="row">
   			<div class="col-sm-12 header">
   			<h1>Boostrap Website</h1>
   			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-4 menu">
-				<div>
-					<h1><i class="fas fa-arrow-circle-right"></i>jj</h1>
-				</div>
 			</div>
 		</div>
-  	</div>
+   <div class="row">
+      <div class="col-md-12 menu">
+        <div>
+          <a href="#/!"><i class="fas fa-home"></i>Home | </a> 
+          <a href="#|About"> About | </a> 
+          <a href="#|Contact"> Contact | </a> 
+          <a href="#|Help"> Help</a>
+        </div>
+      </div> 
+       <ng-view></ng-view>
+
+       <div class="row">
+        <hr />
+        <div class="col-md-12">&copy; 2018 - Arifyanu</div>
+    </div>
   </body>
 </html>
